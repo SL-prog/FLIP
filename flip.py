@@ -72,7 +72,10 @@ while loop:
             i = 0
             for y in range(0, 4):
                 for x in range(0, 4):
-                    case[i].clic(event.pos[0], event.pos[1])
+                    if i!=0:
+                        case[i].clic(event.pos[0], event.pos[1])
+                    if case[i].clicked:
+                        case[i].clicked = False
                     i+=1
     i = 0
     for y in range(0, 4):
