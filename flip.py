@@ -16,8 +16,8 @@ class Case:
         #self.numero = numero
 
     def clic(self, mousex, mousey):
-        videx = case[0].posx
-        videy = case[0].posy
+        emptyx = case[0].posx
+        emptyy = case[0].posy
 
         if (self.posx <= mousex <= self.posx + 125):
             if (self.posy <= mousey <= self.posy + 125):
@@ -26,13 +26,13 @@ class Case:
             self.clicked = False
 
         if self.clicked:
-            if ((self.posx - 125) == videx) and (self.posy == videy):
+            if ((self.posx - 125) == emptyx) and (self.posy == emptyy):
                     self.moovex = -125
-            elif ((self.posy - 125) == videy) and (self.posx == videx):
+            elif ((self.posy - 125) == emptyy) and (self.posx == emptyx):
                     self.moovey = -125
-            elif ((self.posx + 125) == videx) and (self.posy == videy):
+            elif ((self.posx + 125) == emptyx) and (self.posy == emptyy):
                     self.moovex = 125
-            elif ((self.posy + 125) == videy) and (self.posx == videx):
+            elif ((self.posy + 125) == emptyy) and (self.posx == emptyx):
                     self.moovey = 125
 
         if self.moovex != 0:
@@ -63,7 +63,6 @@ for y in range(0, 4):
 
 loop = True
 while loop:
-    window.fill((255,255,255))
 
     for event in pygame.event.get():
         if event.type == QUIT:
